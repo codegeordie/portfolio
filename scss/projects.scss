@@ -31,7 +31,7 @@
 			.project-image {
 				order: 3;
 				@include mq(more,900) {
-					.project-link {
+					.project-link,.github-link {
 						left: -2rem;
 						right: initial;
 					}
@@ -50,7 +50,7 @@
 	padding: 0 2rem;
 	position: relative;
 	@include mq(more,900) {
-		.project-link {
+		.project-link, .github-link {
 			right: -2rem;
 			left: initial;
 		}
@@ -67,13 +67,12 @@
 	}
 }
 
-.project-link {
+.link-button {
 	position: absolute;
-	bottom: 0;
 	padding: .5rem 2rem;
 	margin: 1rem;
 	background: rgba($primary-dark,.85);
-	border: 1px solid rgba($primary-light,.3);
+	border: 1px solid rgba($primary-light,.6);
 	color: $text-light;
 	font: 1.4rem $font-secondary;
 	text-transform: lowercase;
@@ -81,16 +80,30 @@
 	@include touch-check {
 		&:hover {
 			background: $primary-dark;
-			border: 1px solid rgba($primary-light,.7);
+			border: 1px solid rgba($primary-light,.9);
 		}
 	}
 	@include mq(less,900) {
 		margin: 0;
 		left: 50%;
 		right: initial;
-		bottom: -.5rem;
 		transform: translateX(-50%);
 		background: $primary-dark;
+	}
+}
+
+.project-link {
+	bottom: 0;
+	@include mq(less,900) {
+		bottom: -.5rem;
+	}
+}
+
+.github-link {
+	position: absolute;
+	bottom: 4rem;
+	@include mq(less,900) {
+		bottom: 3rem;
 	}
 }
 
@@ -116,9 +129,6 @@
 		font-size: 1.25rem;
 		line-height: 1.7;
 	}
-	button {
-		display: none;
-	}
 	@include mq(less,900) {
 		padding: 0 1rem 1rem;
 		flex: none;
@@ -139,7 +149,7 @@
 	background: url("images/project-partypumpers.jpeg") 0% 0% / cover no-repeat;
 }
 .proj-img-4 {
-	background: url("http://placehold.it/800x400") 50% 50% / cover no-repeat;
+	background: url("images/project-portfolio-inception.jpeg") 50% 50% / cover no-repeat;
 }
 
 
