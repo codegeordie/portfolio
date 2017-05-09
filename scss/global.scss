@@ -1,0 +1,63 @@
+
+*::selection {
+	background: rgba(#C2D076,.6);
+}
+
+html {
+	background-color: $primary-dark;
+	background: linear-gradient(to top, $primary-light, $primary-dark 10%, $primary-dark);
+	font-size: 18px;
+	@include mq(less,1400) {
+		font-size: 16px;
+	}
+	@include mq(less,1000) {
+		font-size: 15px;
+	}
+	@include mq(less,500) {
+		font-size: 13px;
+	}
+}
+
+body {
+	overflow-x: hidden;
+}
+
+h1, h2 {
+	font: 2.5rem $font-headline;
+	color: $text-dark;
+	text-transform: lowercase;
+	margin-bottom: 3rem;
+	@include mq(less,350) {
+		font-size: 2.2rem;
+	}
+}
+
+h1 {
+	padding: 1rem 0 0 1rem;
+}
+
+p {
+	font: 1.3rem $font-paragraph;
+	line-height: 1.5;
+}
+
+footer {
+	background-color: $primary-dark;
+	height: 50px;
+	p {
+		font: .8rem $font-secondary;
+		color: $text-light;
+		text-align: center;
+		line-height: 50px;
+	}
+}
+
+
+
+
+
+
+
+
+
+

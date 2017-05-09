@@ -1,0 +1,34 @@
+	
+@mixin hover-borders($color,$speed) {
+	&:before, &:after {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 0;
+		width: 100%;
+		border-bottom: 1px solid $color;
+		transform: scaleX(0);
+		transition: transform $speed;
+		will-change: transform;
+	}
+	&:before {
+		top: 0;
+		transform-origin: 105% 0%;
+		
+	}
+	&:after {
+		bottom: 0;
+		transform-origin: -5% 0%;
+	}
+	&:hover:before, &:hover:after {
+		transform: scaleX(1);
+	}
+}
+
+
+@mixin touch-check {
+	html:not(.is-touch) & {
+		@content;
+	}
+}
+

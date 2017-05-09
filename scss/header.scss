@@ -1,0 +1,78 @@
+
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+nav {
+	position: relative;
+	align-self: center;
+	display: flex;
+	justify-content: center;
+	margin: 20vh auto 0;
+	@include mq(more,850) {
+		@include touch-check {
+			@include hover-borders($text-dark,.5s);
+		}
+	}
+	@include mq(less,850) {
+		border-top: 1px solid $text-dark;
+		border-bottom: 1px solid $text-dark;
+	}
+	@include mq(less,500) {
+		flex-direction: column;
+		border: 1px solid $text-dark;
+		margin-top: 5vh;
+		background: rgba($primary-light,.55);
+	}
+	h3 {
+		height: 0;
+		text-indent: -10000px;
+	}
+	a {
+		padding: 1rem;
+		margin: 1.2rem 1rem;
+		font: 1.6rem $font-secondary;
+		text-transform: lowercase;
+		color: $text-dark;
+		border: 1px solid transparent;
+		transition: .15s;
+		text-shadow: 0px 0px 6px rgba(214,214,214,.5),
+				 	 0px 0px 1px rgba(0,0,0,.5);
+		@include mq(more,850) {
+			@include touch-check {
+				&:hover {
+					border-left: 1px solid $text-dark;
+					border-right: 1px solid $text-dark;
+				}
+			}
+		}
+		@include mq(less,500) {
+			margin: 0 1rem;
+			padding: 2rem 1.5rem;
+			text-align: center;
+			border-bottom: 1px solid $text-dark;
+			&:last-of-type {
+				border-bottom: none;
+			}
+		}
+	}
+}
+
+#hero {
+	height: 170vh;
+	width: 100vw;
+	background: url("images/mist.jpeg") 70% 0% / cover no-repeat;
+	@include mq(less,850) {
+		background: url("images/mist-mobile.jpeg") 70% 0% / cover no-repeat;
+	}
+}
+
+
+
+
+

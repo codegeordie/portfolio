@@ -1,0 +1,110 @@
+
+#about {
+	display: flex;
+	position: relative;
+	margin-top: -70vh;
+	@include mq(less,950) {
+		flex-direction: column;
+	}
+}
+
+.about-text {
+	flex: 13;
+	background-color: $primary-light;
+	padding: 2rem;
+	p {
+		color: $text-dark;
+		line-height: 1.7;
+		max-width: 800px;
+		margin: 0 auto 2rem;
+		&:last-of-type {
+			margin-bottom: 1rem;
+		}
+	}
+	@include mq(less,950) {
+		flex: 0;
+		padding-bottom: 4rem;
+	}
+}
+
+.skills {
+	flex: 8;
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	p {
+		color: $text-light;
+		text-align: center;
+		text-shadow: 0px 0px 6px rgba(0,0,0,1),
+				 	 0px 0px 1px rgba(214,214,214,.7);
+	}
+	@include mq(less,950) {
+		flex: 0;
+		background: $primary-dark;
+		border-bottom: 2px solid rgba($primary-light,.6);
+		padding: 2rem;
+	}
+	@include mq(less,500) {
+		padding: 1rem;
+	}
+}
+
+.icon-grid {
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+	@include mq(more,1200) {
+		padding: 2rem 10%;
+	}
+	@include mq(less,950) {
+		padding: 2rem 24%;
+	}
+	@include mq(less,800) {
+		padding: 2rem 15%;
+	}
+	@include mq(less,500) {
+		padding: 1rem 5%;
+		margin-bottom: 2rem;
+	}
+}
+
+.box-outer {
+	position: relative;
+	width: (100%/3);
+}
+
+.box-outer:before {
+	content: "";
+	display: block;
+	padding-top: 100%;
+}
+
+.box-inner {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	img {
+		width: 60%;
+		height: 60%;
+		margin: 20%;
+	}
+	h6 {
+		position: absolute;
+		display: block;
+		bottom: 0;
+		left: -50%;
+		width: 200%;
+		font: 1.3rem $font-paragraph;
+		text-align: center;
+		color: rgba($primary-light,.7);
+	}
+}
+
+
+
+
+
+
+

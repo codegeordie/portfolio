@@ -1,0 +1,154 @@
+
+#contact {
+	background: $primary-light;
+	display: flex;
+	flex-direction: column;
+	padding: 2rem;
+	@include mq(less,500) {
+		padding: 1rem;
+		h2{
+			padding: 1rem 0 0 1rem;
+		}
+	}
+}
+
+.contact-wrapper {
+	display: flex;
+	margin-bottom: 6.3rem;
+	@include mq(less,1000) {
+		flex-direction: column;
+		form {
+			border-right: none;
+			position: relative;
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: 0 3rem;
+				border-bottom: 1px solid $primary-dark;
+			}
+		}
+	}
+}
+
+form.contact-form {
+	flex: 13;
+	border-right: 1px solid $primary-dark;
+	@include mq(less,1000) {
+		border-right: none;
+		flex: none;
+	}
+	div {
+		text-align: right;
+		margin: 0 1rem 1rem 0;
+		display: flex;
+		&:first-of-type {
+			margin-top: 1rem;
+		}
+		@include mq(less,1000) {
+			margin-right: 0;
+		}
+		@include mq(less,600) {
+			flex-direction: column;
+			label {
+				text-align: left;
+			}
+		}
+		label {
+			flex: 1;
+			padding: 1rem;
+			background: $primary-dark;
+			color: $text-light;
+			font: 1.4rem $font-secondary;
+			text-transform: lowercase;
+			font-weight: bold;
+		}
+		input, textarea {
+			flex: 3;
+			padding: 1rem;
+			font: 1.3rem $font-paragraph;
+			color: $primary-dark;
+			outline: none;
+			border: 1px solid rgba($primary-dark,.2);
+			border-left: 1px solid $primary-dark;
+			transition: .2s;
+			@include mq(less,600) {
+				border-left: 1px solid transparent;
+			}
+			&:focus {
+				border: 1px solid $primary-dark;
+				box-shadow: 0px 0px 2px rgba($primary-dark,.5);
+			}
+		}
+		textarea {
+			height: 18rem;
+			resize: none;
+		}
+		button {
+			align-self: center;
+			padding: 1rem 4rem;
+			margin: 1rem auto;
+			background: transparent;
+			color: $primary-dark;
+			font: 1.4rem $font-secondary;
+			text-transform: lowercase;
+			font-weight: bold;
+			border: 1px solid $primary-dark;
+			transition: .3s;
+			will-change: background-color, color;
+			@include touch-check {
+				&:hover {
+					background: $primary-dark;
+					color: $text-light;
+				}
+			}
+			@include mq(less,1000) {
+				margin-bottom: 3rem;
+				background: $primary-dark;
+				color: $text-light;
+			}
+		}
+	}
+}
+
+.contact-aside {
+	flex: 8;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-left: 2rem;
+	margin-top: 1rem;
+	@include mq(less,1000) {
+		flex: none;
+		margin-top: 3rem;
+		padding-left: 0;
+	}
+	p {
+		color: $primary-dark;
+		font: 1.4rem $font-secondary;
+		text-transform: lowercase;
+		font-weight: bold;
+		padding: 1rem;
+		margin-bottom: 3rem;
+		border-left: 1px solid $primary-dark;
+		border-right: 1px solid $primary-dark;
+	}
+	a {
+		display: inline-block;
+		color: $primary-dark;
+		font: 1.4rem $font-paragraph;
+		padding: 1rem;
+		margin-bottom: 1rem;
+		position: relative;
+		@include touch-check {
+			@include hover-borders(rgba($primary-dark,.4),.3s);
+		}
+	}
+}
+
+
+
+
+
